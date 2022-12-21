@@ -14,6 +14,22 @@ void main() {
   );
 }
 
+class MgMg extends StatelessWidget {
+  MgMg({Key? key}) : super(key: key);
+  String name = "This is Mg Mg Widget";
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.blue,
+      padding: EdgeInsets.all(8.0),
+      margin: EdgeInsets.all(8.0),
+      child: Text(name),
+    );
+  }
+}
+
+
 class DicePage extends StatefulWidget {
   const DicePage({Key? key}) : super(key: key);
 
@@ -54,7 +70,6 @@ class _DicePageState extends State<DicePage> {
                     child: Image(image: AssetImage("assets/images/dice-$diceTwoNumber.png"),)
                 )
             )
-
           ],
         ),
       ],
@@ -62,6 +77,8 @@ class _DicePageState extends State<DicePage> {
   }
 
   void generateRandomDice(){
+
+
     setState(() {
       diceOneNumber = Random().nextInt(6);
       diceOneNumber = diceOneNumber + 1;
@@ -76,28 +93,4 @@ class _DicePageState extends State<DicePage> {
   }
 }
 
-/*
-class DicePage extends StatelessWidget {
-  const DicePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          Expanded(
-              flex: 1,
-              child: Image(image: AssetImage("assets/images/dice-5.png"),)
-          ),
-          Expanded(
-              flex: 1,
-              child: Image(image: AssetImage("assets/images/dice-2.png"),)
-          )
-        ],
-      ),
-    );
-  }
-}
-
- */
 
